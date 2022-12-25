@@ -3,6 +3,6 @@ services:
     parser_prod_openweather:
         build: ../../
         restart: always
-        container_name: parser_prod_openweather
+        container_name: pipe_parser_prod_openweather
         env_file:
             - ../.env
