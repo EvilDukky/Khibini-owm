@@ -1,1 +1,8 @@
-///
+version: "3.7"
+services:
+    parser_prod_openweather:
+        image: avalancheforecast/main:pipe_parser_prod_openweather
+        restart: always
+        container_name: parser_prod_openweather
+        env_file:
+            - ../.env
