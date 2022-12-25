@@ -254,3 +254,4 @@ schedule.every().hour.at(":00").do(weather)
 # бесконечный цикл, проверяющий каждую секунду, не пора ли запустить задание
 while 1:
     schedule.run_pending()
+    time.sleep(30)
