@@ -1,1 +1,8 @@
-///
+version: "3.7"
+services:
+    parser_stage_openweather:
+        build: ../../
+        restart: always
+        container_name: pipe_parser_stage_openweather
+        env_file:
+            - ../.env
