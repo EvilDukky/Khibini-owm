@@ -6,22 +6,23 @@ import time
 import schedule
 import math
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+lat = os.getenv('LAT')
+lon = os.getenv('LON')
+appid = os.getenv('APPID')
+
+host = os.getenv('POSTGRES_HOST')
+user = os.getenv('POSTGRES_USER')
+password = os.getenv('POSTGRES_PASSWORD')
+database = os.getenv('POSTGRES_DB')
+port = os.getenv('POSTGRES_PORT')
 
 # Открытие и вытаскивание данных из файла конфигурации
 f = open('config.json', 'r', encoding='utf-8')  # открываем конфигурационный файл json
 text = json.load(f)  # загнали все из файла в переменную
-
-for txt in text['owm']:  # создали цикл, который будет работать построчно
-    lat = (txt['lat'])  # вытаскиваем переменные из файла
-    lon = (txt['lon'])
-    appid = (txt['appid'])
-
-for txt in text['postgres']:  # создали цикл, который будет работать построчно
-    host = (txt['host'])  # вытаскиваем переменные из файла
-    user = (txt['user'])
-    password = (txt['password'])
-    database = (txt['database'])
-    port = (txt['port'])
 
 
 # Функция отправки сообщения в беседу телеграмм
