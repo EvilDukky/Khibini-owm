@@ -1,1 +1,6 @@
-////
+version: "3.7"
+services:
+    parser_stage_openweather:
+        build: ../../
+        restart: always
+        container_name: parser_stage_openweather
